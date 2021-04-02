@@ -1,4 +1,7 @@
-export function regex({ raw: texts }: TemplateStringsArray, ...insertions: RegExp[]) {
+export function regex(
+  { raw: texts }: TemplateStringsArray,
+  ...insertions: RegExp[]
+) {
   const derivedFlags = new Set();
   const regex: string[] = [];
   for (let i = 0; i < insertions.length; i++) {

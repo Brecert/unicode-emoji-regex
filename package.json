@@ -1,0 +1,26 @@
+{
+  "name": "@brecert/unicode-emoji-regex",
+  "version": "0.1.0",
+  "description": "unicode emoji spec as regex",
+  "main": "publish/node/emoji.js",
+  "types": "publish/esm/emoji.d.ts",
+  "browser": "publish/esm/emoji.js",
+  "repository": "https://github.com/Brecert/unicode-emoji-regex.git",
+  "author": "brecert <11599528+Brecert@users.noreply.github.com>",
+  "license": "MIT",
+  "files": [
+    "publish/esm/*",
+    "publish/node/*"
+  ],
+  "scripts": {
+    "build": "npm run build:deno && npm run build:tsc",
+    "build:deno": "deno bundle emoji.ts > publish/emoji.js; npm run build:deno:declarations",
+    "build:deno:declarations": "deno run --unstable --allow-read --allow-write scripts/declarations.ts emoji.ts publish/",
+    "build:tsc": "npm run build:tsc:esm; npm run build:tsc:node",
+    "build:tsc:esm": "tsc --build publish/configs/esm.tsconfig.json",
+    "build:tsc:node": "tsc --build publish/configs/node.tsconfig.json"
+  },
+  "devDependencies": {
+    "typescript": "^4.2.3"
+  }
+}

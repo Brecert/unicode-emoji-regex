@@ -1,4 +1,4 @@
-import { regex } from './regex.ts'
+import { regex } from "./regex.ts";
 
 // 1.4.1 Emoji Characters
 export const EMOJI_CHARACTER = /\p{Emoji}/u;
