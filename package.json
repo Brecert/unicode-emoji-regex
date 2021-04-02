@@ -1,6 +1,6 @@
 {
   "name": "@brecert/unicode-emoji-regex",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "unicode emoji spec as regex",
   "main": "publish/node/emoji.js",
   "types": "publish/esm/emoji.d.ts",
