@@ -13,7 +13,7 @@
     "allowJs": true
   },
   "include": [
-    "../emoji.js"
+    "../../emoji.ts"
   ],
   "exclude": [
     "node_modules"

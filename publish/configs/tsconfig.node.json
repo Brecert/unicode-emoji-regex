@@ -4,6 +4,6 @@
     "module": "CommonJS",
     "target": "ES2018",
     "declaration": true,
-    "outDir": "../node"
+    "outDir": "../node",
   }
 }
