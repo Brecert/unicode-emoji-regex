@@ -1,6 +1,6 @@
 {
   "name": "unicode-emoji-regex",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "unicode emoji spec as regex",
   "main": "publish/node/emoji.js",
   "types": "publish/esm/emoji.d.ts",
@@ -13,6 +13,7 @@
     "publish/node/*"
   ],
   "scripts": {
+    "test": "deno test -A",
     "build": "npm run build:tsc",
     "build:tsc": "npm run build:tsc:esm; npm run build:tsc:node",
     "build:tsc:esm": "tsc --build publish/configs/tsconfig.esm.json",

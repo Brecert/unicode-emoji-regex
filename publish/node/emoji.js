@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EMOJI_SEQUENCE = exports.EMOJI_ZWJ_SEQUENCE = exports.ZWJ = exports.EMOJI_ZWJ_ELEMENT = exports.EMOJI_CORE_SEQUENCE = exports.EMOJI_KEYCAP_SEQUENCE = exports.EMOJI_TAG_SEQUENCE = exports.TAG_END = exports.TAG_SPEC = exports.TAG_BASE = exports.EMOJI_FLAG_SEQUENCE = exports.REGIONAL_INDICATOR = exports.EMOJI_MODIFIER_SEQUENCE = exports.EMOJI_MODIFIER_BASE = exports.EMOJI_MODIFIER = exports.EMOJI_PRESENTATION_SEQUENCE = exports.EMOJI_PRESENTATION_SELECTOR = exports.TEXT_PRESENTATION_SEQUENCE = exports.TEXT_PRESENTATION_SELECTOR = exports.DEFAULT_TEXT_PRESENTATION_CHARACTER = exports.DEFAULT_EMOJI_PRESENTATION_CHARACTER = exports.EMOJI_CHARACTER = exports.regex = void 0;
+exports.EMOJI = exports.EMOJI_SEQUENCE = exports.EMOJI_ZWJ_SEQUENCE = exports.ZWJ = exports.EMOJI_ZWJ_ELEMENT = exports.EMOJI_CORE_SEQUENCE = exports.EMOJI_KEYCAP_SEQUENCE = exports.EMOJI_TAG_SEQUENCE = exports.TAG_END = exports.TAG_SPEC = exports.TAG_BASE = exports.EMOJI_FLAG_SEQUENCE = exports.REGIONAL_INDICATOR = exports.EMOJI_MODIFIER_SEQUENCE = exports.EMOJI_MODIFIER_BASE = exports.EMOJI_MODIFIER = exports.EMOJI_PRESENTATION_SEQUENCE = exports.EMOJI_PRESENTATION_SELECTOR = exports.TEXT_PRESENTATION_SEQUENCE = exports.TEXT_PRESENTATION_SELECTOR = exports.DEFAULT_TEXT_PRESENTATION_CHARACTER = exports.DEFAULT_EMOJI_PRESENTATION_CHARACTER = exports.EMOJI_CHARACTER = exports.regex = void 0;
 function regex({ raw: texts }, ...insertions) {
     const derivedFlags = new Set();
     const regex = [];
@@ -47,3 +47,6 @@ exports.EMOJI_ZWJ_ELEMENT = regex `${exports.EMOJI_MODIFIER_SEQUENCE}|${exports.
 exports.ZWJ = /\u{200d}/u;
 exports.EMOJI_ZWJ_SEQUENCE = regex `${exports.EMOJI_ZWJ_ELEMENT}(?:${exports.ZWJ}${exports.EMOJI_ZWJ_ELEMENT})+`();
 exports.EMOJI_SEQUENCE = regex `${exports.EMOJI_TAG_SEQUENCE}|${exports.EMOJI_ZWJ_SEQUENCE}|${exports.EMOJI_CORE_SEQUENCE}`();
+// non-standard convenience regex
+// however it matches all the emoji in `./emoji_test.ts` correctly
+exports.EMOJI = regex `${exports.EMOJI_SEQUENCE}|\p{Emoji_Presentation}|\p{Extended_Pictographic}`();

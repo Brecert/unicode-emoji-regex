@@ -67,3 +67,8 @@ export const EMOJI_ZWJ_SEQUENCE = regex
 
 export const EMOJI_SEQUENCE = regex
   `${EMOJI_TAG_SEQUENCE}|${EMOJI_ZWJ_SEQUENCE}|${EMOJI_CORE_SEQUENCE}`();
+
+// non-standard convenience regex
+// however it matches all the emoji in `./emoji_test.ts` correctly
+export const EMOJI = regex
+  `${EMOJI_SEQUENCE}|\p{Emoji_Presentation}|\p{Extended_Pictographic}`();

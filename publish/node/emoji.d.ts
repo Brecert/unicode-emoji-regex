@@ -21,3 +21,4 @@ export declare const EMOJI_ZWJ_ELEMENT: RegExp;
 export declare const ZWJ: RegExp;
 export declare const EMOJI_ZWJ_SEQUENCE: RegExp;
 export declare const EMOJI_SEQUENCE: RegExp;
+export declare const EMOJI: RegExp;
